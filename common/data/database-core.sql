@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2016 a las 05:30:24
+-- Tiempo de generación: 02-09-2016 a las 18:15:04
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 7.0.1
 
@@ -179,21 +179,30 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/user-management/user/toggle-attribute', 3, NULL, NULL, NULL, 1472682396, 1472682396, NULL),
 ('/user-management/user/update', 3, NULL, NULL, NULL, 1472682396, 1472682396, NULL),
 ('/user-management/user/view', 3, NULL, NULL, NULL, 1472682396, 1472682396, NULL),
-('Admin', 1, 'Admin', NULL, NULL, 1472682396, 1472682396, NULL),
 ('assignRolesToUsers', 2, 'Assign roles to users', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('bindUserToIp', 2, 'Bind user to IP', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('changeOwnPassword', 2, 'Change own password', NULL, NULL, 1472682396, 1472682396, 'userCommonPermissions'),
 ('changeUserPassword', 2, 'Change user password', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
+('CLIENTE', 1, 'Cliente', NULL, NULL, 1472682396, 1472831226, NULL),
 ('commonPermission', 2, 'Common permission', NULL, NULL, 1472682390, 1472682390, NULL),
 ('createUsers', 2, 'Create users', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
+('CREATE_DATA_CLIENT', 2, 'Crear Información Cliente', NULL, NULL, 1472831495, 1472831495, 'CLIENTE'),
+('CREATE_DATA_PROVIDER', 2, 'Crear Información Proveedor', NULL, NULL, 1472831606, 1472831606, 'PROVEEDOR'),
 ('deleteUsers', 2, 'Delete users', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
+('DELETE_DATA_CLIENT', 2, 'Borrar Información Cliente', NULL, NULL, 1472831540, 1472831540, 'CLIENTE'),
+('DELETE_DATA_PROVIDER', 2, 'Borrar Información Proveedor', NULL, NULL, 1472831733, 1472831733, 'PROVEEDOR'),
 ('editUserEmail', 2, 'Edit user email', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('editUsers', 2, 'Edit users', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
+('PROVEEDORES', 1, 'Proveedores', NULL, NULL, 1472831274, 1472831274, NULL),
+('UPDATE_DATA_CLIENT', 2, 'Editar Información Cliente', NULL, NULL, 1472831517, 1472831517, 'CLIENTE'),
+('UPDATE_DATA_PROVIDER', 2, 'Editar Información Proveedor', NULL, NULL, 1472831630, 1472831630, 'PROVEEDOR'),
 ('viewRegistrationIp', 2, 'View registration IP', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('viewUserEmail', 2, 'View user email', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('viewUserRoles', 2, 'View user roles', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
 ('viewUsers', 2, 'View users', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
-('viewVisitLog', 2, 'View visit log', NULL, NULL, 1472682396, 1472682396, 'userManagement');
+('viewVisitLog', 2, 'View visit log', NULL, NULL, 1472682396, 1472682396, 'userManagement'),
+('VIEW_DATA_CLIENT', 2, 'Ver Información Cliente', NULL, NULL, 1472831436, 1472831436, 'CLIENTE'),
+('VIEW_DATA_PROVIDER', 2, 'Ver Información Proveedor', NULL, NULL, 1472831581, 1472831581, 'PROVEEDOR');
 
 -- --------------------------------------------------------
 
@@ -211,13 +220,6 @@ CREATE TABLE `auth_item_child` (
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
-('Admin', 'assignRolesToUsers'),
-('Admin', 'changeOwnPassword'),
-('Admin', 'changeUserPassword'),
-('Admin', 'createUsers'),
-('Admin', 'deleteUsers'),
-('Admin', 'editUsers'),
-('Admin', 'viewUsers'),
 ('assignRolesToUsers', '/user-management/user-permission/set'),
 ('assignRolesToUsers', '/user-management/user-permission/set-roles'),
 ('assignRolesToUsers', 'viewUserRoles'),
@@ -225,6 +227,13 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('changeOwnPassword', '/user-management/auth/change-own-password'),
 ('changeUserPassword', '/user-management/user/change-password'),
 ('changeUserPassword', 'viewUsers'),
+('CLIENTE', 'assignRolesToUsers'),
+('CLIENTE', 'changeOwnPassword'),
+('CLIENTE', 'changeUserPassword'),
+('CLIENTE', 'createUsers'),
+('CLIENTE', 'deleteUsers'),
+('CLIENTE', 'editUsers'),
+('CLIENTE', 'viewUsers'),
 ('commonPermission', '/user-management/auth/change-own-password'),
 ('commonPermission', '/user-management/auth/confirm-email'),
 ('commonPermission', '/user-management/auth/confirm-email-receive'),
@@ -266,6 +275,8 @@ CREATE TABLE `auth_item_group` (
 --
 
 INSERT INTO `auth_item_group` (`code`, `name`, `created_at`, `updated_at`) VALUES
+('CLIENTE', 'Cliente', 1472831361, 1472831361),
+('PROVEEDOR', 'Proveedor', 1472831373, 1472831373),
 ('userCommonPermissions', 'User common permission', 1472682396, 1472682396),
 ('userManagement', 'User management', 1472682396, 1472682396);
 
@@ -364,7 +375,8 @@ CREATE TABLE `user_visit_log` (
 INSERT INTO `user_visit_log` (`id`, `token`, `ip`, `language`, `user_agent`, `user_id`, `visit_time`, `browser`, `os`) VALUES
 (1, '57c83d67cb219', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472740711, 'Chrome', 'Windows'),
 (2, '57c8e9ef405b2', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472784879, 'Chrome', 'Windows'),
-(3, '57c8ea792be44', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472785017, 'Chrome', 'Windows');
+(3, '57c8ea792be44', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472785017, 'Chrome', 'Windows'),
+(4, '57c99e93e6bd5', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472831123, 'Chrome', 'Windows');
 
 --
 -- Índices para tablas volcadas
@@ -437,7 +449,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `user_visit_log`
 --
 ALTER TABLE `user_visit_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restricciones para tablas volcadas
 --

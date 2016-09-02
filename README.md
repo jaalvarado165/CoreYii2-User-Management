@@ -16,9 +16,10 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
 
-Before start you should install Composer in your laptop or server and GIT.
+Before start you should install Composer in your laptop or server, GIT and configure PHP Path.
 
 https://getcomposer.org/
+https://git-scm.com/
 
 DIRECTORY STRUCTURE
 -------------------
@@ -59,11 +60,31 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
+Backend access /YOURPATH/backend/web/index.php?r=user-management%2Fauth%2Flogin
+User: superadmin
+Pass: asdqwe123
+
+This core has three examples roles:
+* Superadmin
+* Client
+* Provider
+
+Frontend access /YOURPATH/frontend/web/index.php
+
 This core has several qualities:
 
 * I18N Translations
 * User Management Extension (Users, Roles, Permissions, Permissions Group)
+* RBAC
 * Password recovery
 * Change password
-* Admin LTE template
+* Admin LTE template (Backend)
 * Swiftmailer
+* Register
+* GII (you can access in backend and frontend GII)
+
+You can read:
+* The definite guide Yii2 http://www.yiiframework.com/doc-2.0/guide-index.html
+* The youtube channel https://www.youtube.com/channel/UCaDQTcZrzZqym56ikdOlJow
+* Admin LTE https://almsaeedstudio.com/preview
+* User Management Yii2 https://github.com/webvimark/user-management
