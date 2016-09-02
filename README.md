@@ -59,7 +59,7 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
-This core have several qualities:
+This core has several qualities:
 
 * I18N Translations
 * User Management Extension (Users, Roles, Permissions, Permissions Group)
