@@ -1,5 +1,4 @@
-# CoreYii2-User-Management
-Yii 2 Advanced Project Template
+# CoreYii2 User Management & Admin LTE
 ===============================
 
 Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
@@ -17,6 +16,10 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
 
+Before start you should install Composer in your laptop or server and GIT.
+
+https://getcomposer.org/
+
 DIRECTORY STRUCTURE
 -------------------
 
@@ -25,6 +28,9 @@ common
     config/              contains shared configurations
     mail/                contains view files for e-mails
     models/              contains model classes used in both backend and frontend
+    data/				 contains database and tables
+    messages/     		 contains translations
+    widgets/  			 contains common widgets
 console
     config/              contains console configurations
     controllers/         contains console controllers (commands)
@@ -53,3 +59,11 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
+This core have several qualities:
+
+* I18N Translations
+* User Management Extension (Users, Roles, Permissions, Permissions Group)
+* Password recovery
+* Change password
+* Admin LTE template
+* Swiftmailer
