@@ -61,6 +61,7 @@ tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
 Backend access /YOURPATH/backend/web/index.php?r=user-management%2Fauth%2Flogin
+
 User: superadmin
 Pass: asdqwe123
 
@@ -69,11 +70,11 @@ This core has three examples roles:
 * CLIENTES
 * PROVEEDORES
 
-Frontend access /YOURPATH/frontend/web/index.php
+Frontend access /YOURPATH/frontend/web/index.php 
 
 Features:
 
-* I18N Translations
+* I18N Translations: actually do work with english - /YOURPATH/common/messages/en/app.php
 * User Management Extension (Users, Roles, Permissions, Permissions Group)
 * RBAC
 * Password recovery
