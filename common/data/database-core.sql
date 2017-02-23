@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2016 a las 18:15:04
+-- Tiempo de generación: 23-02-2017 a las 17:27:42
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 7.0.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `financiamidea`
+-- Base de datos: `database-core`
 --
 
 -- --------------------------------------------------------
@@ -231,9 +231,13 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('CLIENTE', 'changeOwnPassword'),
 ('CLIENTE', 'changeUserPassword'),
 ('CLIENTE', 'createUsers'),
+('CLIENTE', 'CREATE_DATA_CLIENT'),
 ('CLIENTE', 'deleteUsers'),
+('CLIENTE', 'DELETE_DATA_CLIENT'),
 ('CLIENTE', 'editUsers'),
+('CLIENTE', 'UPDATE_DATA_CLIENT'),
 ('CLIENTE', 'viewUsers'),
+('CLIENTE', 'VIEW_DATA_CLIENT'),
 ('commonPermission', '/user-management/auth/change-own-password'),
 ('commonPermission', '/user-management/auth/confirm-email'),
 ('commonPermission', '/user-management/auth/confirm-email-receive'),
@@ -250,6 +254,10 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('editUsers', '/user-management/user/bulk-deactivate'),
 ('editUsers', '/user-management/user/update'),
 ('editUsers', 'viewUsers'),
+('PROVEEDORES', 'CREATE_DATA_PROVIDER'),
+('PROVEEDORES', 'DELETE_DATA_PROVIDER'),
+('PROVEEDORES', 'UPDATE_DATA_PROVIDER'),
+('PROVEEDORES', 'VIEW_DATA_PROVIDER'),
 ('viewUsers', '/user-management/user/grid-page-size'),
 ('viewUsers', '/user-management/user/index'),
 ('viewUsers', '/user-management/user/view'),
@@ -376,7 +384,8 @@ INSERT INTO `user_visit_log` (`id`, `token`, `ip`, `language`, `user_agent`, `us
 (1, '57c83d67cb219', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472740711, 'Chrome', 'Windows'),
 (2, '57c8e9ef405b2', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472784879, 'Chrome', 'Windows'),
 (3, '57c8ea792be44', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472785017, 'Chrome', 'Windows'),
-(4, '57c99e93e6bd5', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472831123, 'Chrome', 'Windows');
+(4, '57c99e93e6bd5', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472831123, 'Chrome', 'Windows'),
+(5, '58af06f44311b', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 1, 1487865588, 'Chrome', 'Windows');
 
 --
 -- Índices para tablas volcadas
@@ -449,7 +458,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `user_visit_log`
 --
 ALTER TABLE `user_visit_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --

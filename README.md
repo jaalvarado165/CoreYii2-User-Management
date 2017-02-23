@@ -2,9 +2,9 @@
 ===============================
 
 Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+developing complex Web applications with multiple features.
 
-The template includes three tiers: front end, back end, and console, each of which
+The template includes three parts: frontend, backend, and console, each of which
 is a separate Yii application.
 
 The template is designed to work in a team development environment. It supports
@@ -65,13 +65,13 @@ User: superadmin
 Pass: asdqwe123
 
 This core has three examples roles:
-* Superadmin
-* Client
-* Provider
+* SUPERADMIN
+* CLIENTES
+* PROVEEDORES
 
 Frontend access /YOURPATH/frontend/web/index.php
 
-This core has several qualities:
+Features:
 
 * I18N Translations
 * User Management Extension (Users, Roles, Permissions, Permissions Group)
@@ -82,6 +82,8 @@ This core has several qualities:
 * Swiftmailer
 * Register
 * GII (you can access in backend and frontend GII)
+* Kartik widgets (https://github.com/kartik-v/yii2-widgets)
+* Login REST (Webservices) /YOURPATH/frontend/web/index.php?r=api/login
 
 You can read:
 * The definite guide Yii2 http://www.yiiframework.com/doc-2.0/guide-index.html

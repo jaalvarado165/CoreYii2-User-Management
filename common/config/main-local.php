@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=financiamidea',
+            'dsn' => 'mysql:host=localhost;dbname=database-core',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
