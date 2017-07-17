@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2017 a las 17:27:42
+-- Tiempo de generación: 17-07-2017 a las 16:21:26
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 7.0.1
 
@@ -385,7 +385,8 @@ INSERT INTO `user_visit_log` (`id`, `token`, `ip`, `language`, `user_agent`, `us
 (2, '57c8e9ef405b2', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472784879, 'Chrome', 'Windows'),
 (3, '57c8ea792be44', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472785017, 'Chrome', 'Windows'),
 (4, '57c99e93e6bd5', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36', 1, 1472831123, 'Chrome', 'Windows'),
-(5, '58af06f44311b', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 1, 1487865588, 'Chrome', 'Windows');
+(5, '58af06f44311b', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 1, 1487865588, 'Chrome', 'Windows'),
+(6, '596cc6e5da639', '127.0.0.1', 'es', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36', 1, 1500301029, 'Chrome', 'Windows');
 
 --
 -- Índices para tablas volcadas
@@ -458,7 +459,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `user_visit_log`
 --
 ALTER TABLE `user_visit_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
